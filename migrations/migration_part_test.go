@@ -58,7 +58,7 @@ var _ = Describe("MigrationPart", func() {
     rules:
     - type: update
       selector: 'product_version'
-      to: ((PRODUCT_VERSION))((BUILD_NUMBER))`))
+      to: ((PRODUCT_VERSION))`))
 		})
 	})
 })
