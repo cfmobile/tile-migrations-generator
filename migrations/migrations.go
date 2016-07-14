@@ -48,7 +48,8 @@ func (m *Migrations) WriteMissingMigrations(productName string) error {
 	for _, version := range missingVersions {
 		productFile, err := m.api.GetProductFileForVersion(productName, version, "pivotal")
 		if err != nil {
-			return err
+			fmt.Printf("Unable to find a product file for %s\n", version)
+			continue
 		}
 
 		productFilePath := downloadDir + "/" + productFile.Name()
